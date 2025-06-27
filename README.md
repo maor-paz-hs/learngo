@@ -9,6 +9,7 @@ Make sure to insert this in your `.bashrc` or `.zshrc` file.
 ## GO Config
 export GOPATH=$HOME/golib
 export PATH=$PATH:$GOPATH/bin
+export GOBIN=$GOPATH/bin
 export GOPATH=$GOPATH:$HOME/code
 
 Create the directory if it does not exist
