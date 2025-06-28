@@ -21,6 +21,7 @@ export GOPATH=$HOME/golib
 export PATH=$PATH:$GOPATH/bin
 export GOBIN=$GOPATH/bin
 export GOPATH=$GOPATH:$HOME/code
+export GO111MODULE=on
 
 Create the directory if it does not exist
 ```bash
@@ -51,6 +52,11 @@ touch ~/code/src/github.com/<GitHubUserName>/firstapp/main.go
 <details>
 <summary><b>Compile, build, run</b></summary>
 
+To build and run your Go application, you can use the following commands:
+
+```bash
+go build -o firstapp firstapp/main.go
+```
 
 </details>
 
