@@ -1,6 +1,16 @@
 # learngo
 This repo created to store learning path of GoLang
 
+<details>
+<summary><b>Install Go</b></summary>
+
+[Download Go](https://go.dev/dl/)
+
+Choose the latest version and download the binary for your OS.
+You can also choose the installer for your OS, such as `go1.20.3.darwin-amd64.pkg` for macOS.
+</details>
+
+<br>
 
 <details>
 <summary><b>Go configuration for the OS</b></summary>
@@ -18,9 +28,10 @@ mkdir -p ~/golib
 mkdir -p ~/code/{bin,src,pkg}
 ```
 </details>
-
+<br>
 
 <details>
+
 <summary><b>Work with GitHub</b></summary>
 
 Make sure to insert this in your `.bashrc` or `.zshrc` file.
@@ -33,7 +44,13 @@ mkdir -p ~/code/src/github.com/<GitHubUserName>/firstapp
 touch ~/code/src/github.com/<GitHubUserName>/firstapp/main.go
 ```
 
-
-
-```
 </details>
+
+<br>
+
+<details>
+<summary><b>Compile, build, run</b></summary>
+
+
+</details>
+
