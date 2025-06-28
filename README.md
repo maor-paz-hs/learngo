@@ -9,6 +9,15 @@ This repo created to store learning path of GoLang
 Choose the latest version and download the binary for your OS.
 You can also choose the installer for your OS, such as `go1.20.3.darwin-amd64.pkg` for macOS.
 </details>
+<br>
+
+<details>
+<summary><b>Tools and cheat sheet </b></summary>
+
+goenv aims to be as simple as possible and follow the already established successful version management model of pyenv and rbenv.
+[Go-env](https://github.com/go-nv/goenv)
+
+</details>
 
 <br>
 
