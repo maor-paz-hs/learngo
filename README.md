@@ -109,7 +109,7 @@ func main() {
 <details>
 <summary><b>Variable declaration</b></summary>
 
-## Variable conventions
+## Variable rules of Go
 In Go, variable names should be descriptive and follow the following conventions:
 - Use camelCase for variable names (e.g., `myVariable`).
 - Avoid using underscores in variable names (e.g., use `myVariable` instead of `my_variable`).
@@ -120,6 +120,7 @@ In Go, variable names should be descriptive and follow the following conventions
 - Use uppercase letters for package-level variables that need to be exported (accessible outside the package).
 - Use lowercase letters for package-level variables that are not exported (accessible only within the package).
 - Use `const` for constant values that do not change throughout the program.
+- You can't declare a variable with the same name in the same scope, but you can reassign it.
 
 In Go, you can declare variables using the `var` keyword or the short variable declaration syntax `:=`.
 <br>
@@ -145,6 +146,7 @@ var (
 	a int = 10
     b float64 = 3.14
     c bool = true
+	
 )
 // Another variables that can be declared
 var (
@@ -156,6 +158,9 @@ var (
 func main() {
 	// Using short variable declaration
 	x := 42
+	// reassigning the variable b
+	b = 2.71
+	
 	fmt.Println("Value of x:", x)
 	fmt.Printf("Value of y: %v, %T", y, y)
 	fmt.Printf("Value of a: %v, %T", a, a)
