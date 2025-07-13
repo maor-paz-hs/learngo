@@ -40,11 +40,11 @@ Create the directory if it does not exist
 mkdir -p ~/golib
 mkdir -p ~/code/{bin,src,pkg}
 ```
+
 </details>
 <br>
 
 <details>
-
 <summary><b>Work with GitHub</b></summary>
 
 Make sure to insert this in your `.bashrc` or `.zshrc` file.
@@ -58,7 +58,6 @@ touch ~/code/src/github.com/<GitHubUserName>/firstapp/main.go
 ```
 
 </details>
-
 <br>
 
 <details>
@@ -154,6 +153,7 @@ var (
 	companion string= "Jane Doe"
 	docrotNumber int = 3
 	season int = 11
+	chapter int = 5
 ) 
 func main() {
 	// Using short variable declaration
@@ -170,11 +170,47 @@ func main() {
 	fmt.Printf("Value of companion: %v, %T", companion, companion)
 	fmt.Printf("Value of docrotNumber: %v, %T", docrotNumber, docrotNumber)
 	fmt.Printf("Value of season: %v, %T", season, season)
+	
 }
 ```
 
+</details>
+<br>
 
+<details>
+<summary><b> Booleans </b></summary>
 
+```go
+package main
 
+import (
+	"fmt"
+)
+
+func main()  {
+	// Boolean values
+    var isTrue bool = true
+    var isFalse bool = false
+
+    // Print boolean values
+    fmt.Println("isTrue:", isTrue)
+    fmt.Println("isFalse:", isFalse)
+
+    // Boolean expressions
+    var a int = 5
+    var b int = 10
+
+    // Comparison operators
+    fmt.Println("a < b:", a < b) // true
+    fmt.Println("a > b:", a > b) // false
+    fmt.Println("a == b:", a == b) // false
+    fmt.Println("a != b:", a != b) // true
+
+    // Logical operators
+    fmt.Println("isTrue && isFalse:", isTrue && isFalse) // false
+    fmt.Println("isTrue || isFalse:", isTrue || isFalse) // true
+}
+```
 
 </details>
+
