@@ -213,4 +213,126 @@ func main()  {
 ```
 
 </details>
+<br>
 
+<details>
+<summary><b> const usage in Go </b></summary>
+
+The key difference between using const and var in Go boils down to immutability, compile-time evaluation, and language constraints.
+
+
+| Feature                     | `const`                     | `var`       	|
+| --------------------------- | ---------------------------  | ------------ |
+| Immutable                   | ✅                           | ❌           |
+| Evaluated at compile-time   | ✅                           | ❌ (runtime) |
+| Can use `iota`              | ✅                           | ❌           |
+| Memory allocation           | None (inlined)               | Yes         	|
+| Used for array sizes, cases | ✅                           | ❌           |
+| Can hold dynamic values     | ❌ (only literals or consts) | ✅           |
+
+
+## Notes
+
+1. When using `iota` we are telling Go to start from 0, if 0 is not being used we can use `_ = iota` to tell the compiler not assign it to the RAM.
+
+
+### Enumerated States or Types
+Often used to define a set of related constants, such as log levels, file types, or application states.
+
+```go
+type LogLevel int
+
+const (
+	LogDebug LogLevel = iota
+	LogInfo
+	LogWarn
+	LogError
+	LogFatal
+)
+```
+
+Used in production code to configure verbosity:
+```go
+func log(level LogLevel, message string) {
+	if level >= LogWarn {
+		fmt.Println(message)
+	}
+}
+```
+
+
+### Bitmask Flags
+Used to define unique bit flags for combining options using bitwise operations.
+
+```go
+const (
+	FlagRead = 1 << iota  // 1
+	FlagWrite             // 2
+	FlagExecute           // 4
+)
+```
+
+Usage:
+```go
+perm := FlagRead | FlagWrite
+if perm&FlagWrite != 0 {
+	fmt.Println("Write access granted")
+}
+```
+
+### Protocol or Status Codes
+For defining HTTP-like custom status codes:
+
+```go
+const (
+	StatusOK = 200 + iota
+	StatusCreated // 201
+	StatusAccepted // 202
+)
+```
+
+### Custom Error Codes
+Used in middleware or API codebases:
+
+```go
+const (
+	ErrInvalidInput = iota + 1000  // Offset from 1000
+	ErrTimeout
+	ErrNotFound
+	ErrPermission
+)
+```
+
+### Weekdays or Months
+Compact way to define time-related enums:
+
+```go
+type Weekday int
+
+const (
+	Sunday Weekday = iota
+	Monday
+	Tuesday
+	Wednesday
+	Thursday
+	Friday
+	Saturday
+)
+```
+
+### Database Column Indexes
+In database-related code, for accessing columns by index from SQL rows:
+
+```go
+const (
+	ColID = iota
+	ColName
+	ColEmail
+	ColCreatedAt
+)
+
+id := row[ColID]
+email := row[ColEmail]
+```
+
+</details>
