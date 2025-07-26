@@ -364,11 +364,11 @@ func main (){
 }
 ```
 
-The `%.2f` in line 22 is a format specifier used with fmt.Printf to control how floating-point numbers are displayed: 
+The `%.2f` is a format specifier used with `fmt.Printf` to control how floating-point numbers are displayed: 
 <br>
-`%f` - tells Printf to format the value as a floating-point number (decimal notation)
+`%f` - Tells Printf to format the value as a floating-point number (decimal notation)
 <br>
-`.2` - specifies the precision - exactly 2 decimal places after the decimal point
+`.2` - Specifies the precision - exactly 2 decimal places after the decimal point
 <br>
  So `%.2f` means: "display as a float with exactly 2 decimal places"
 
