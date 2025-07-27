@@ -337,39 +337,7 @@ email := row[ColEmail]
 
 
 ### sizing with iota
-
-```go
-package main
-
-import (
-	"fmt"
-)
-
-const (
-	_ = iota // ignore first value by assigning to a blank identifier
-
-	KB = 1 << (10 * iota)
-	MB
-	GB
-	TB
-	PB
-	EB 
-	ZB
-	YB
-)
-
-func main (){
-	fileSize := 4000000000. // This will result float number
-	fmt.printf("%.2fGB", fileSize/GB)
-}
-```
-
-The `%.2f` is a format specifier used with `fmt.Printf` to control how floating-point numbers are displayed: 
-<br>
-`%f` - Tells Printf to format the value as a floating-point number (decimal notation)
-<br>
-`.2` - Specifies the precision - exactly 2 decimal places after the decimal point
-<br>
- So `%.2f` means: "display as a float with exactly 2 decimal places"
+You can check it on the file with an example
+[example](const/cmd/main.go)
 
 </details>
