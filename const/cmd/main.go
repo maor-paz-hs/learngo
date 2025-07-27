@@ -48,15 +48,12 @@ func bytesToGB(bytes float64) float64 {
 func printFileSize(bytes float64) {
 	gb := bytesToGB(bytes)
 	fmt.Printf("File size: %.2fGB\n", gb)
-	{
-		{ /*
-				The %.2f is a format specifier used with fmt.Printf to control how floating-point numbers are displayed:
-				%f - Tells Printf to format the value as a floating-point number (decimal notation)
-				.2 - Specifies the precision - exactly 2 decimal places after the decimal point
-				So %.2f means: "display as a float with exactly 2 decimal places"
-			*/
-		}
-	}
+	{{/*
+		The %.2f is a format specifier used with fmt.Printf to control how floating-point numbers are displayed:
+		%f - Tells Printf to format the value as a floating-point number (decimal notation)
+		.2 - Specifies the precision - exactly 2 decimal places after the decimal point
+		So %.2f means: "display as a float with exactly 2 decimal places"
+	*/}}
 }
 
 func main() {
