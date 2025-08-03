@@ -35,7 +35,7 @@ const (
 	)
 
 	fmt.Println("Error codes:")
-	fmt.Printf("%v\n%v\n%v\n%v\n", id, email, ErrTimeout, ErrNotFound, ErrPermission)
+	fmt.Printf("%v\n%v\n%v\n%v\n", ErrInvalidInput, ErrTimeout, ErrNotFound, ErrPermission)
 }
 
 
