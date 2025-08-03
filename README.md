@@ -287,54 +287,9 @@ For defining HTTP-like custom status codes:
 const (
 	StatusOK = 200 + iota
 	StatusCreated // 201
-	StatusAccepted // 202
+	  StatusAccepted // 202
 )
 ```
-
-### Custom Error Codes
-Used in middleware or API codebases:
-
-```go
-const (
-	ErrInvalidInput = iota + 1000  // Offset from 1000
-	ErrTimeout
-	ErrNotFound
-	ErrPermission
-)
-```
-
-### Weekdays or Months
-Compact way to define time-related enums:
-
-```go
-type Weekday int
-
-const (
-	Sunday Weekday = iota
-	Monday
-	Tuesday
-	Wednesday
-	Thursday
-	Friday
-	Saturday
-)
-```
-
-### Database Column Indexes
-In database-related code, for accessing columns by index from SQL rows:
-
-```go
-const (
-	ColID = iota
-	ColName
-	ColEmail
-	ColCreatedAt
-)
-
-id := row[ColID]
-email := row[ColEmail]
-```
-
 
 ### sizing with iota
 You can check it on the file with an example

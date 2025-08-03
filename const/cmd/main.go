@@ -6,6 +6,38 @@ import (
 	"fmt"
 )
 
+// Database columns
+// In database-related code, for accessing columns by index from SQL rows:
+func printDatabaseColumns() {
+const (
+	ColID = iota
+	ColName
+	ColEmail
+	ColCreatedAt
+	)
+
+
+	fmt.Println("Database columns:")
+	fmt.Printf("%v\n%v\n%v\n%v\n", ColID, ColName, ColEmail, ColCreatedAt)
+
+	// id := row[ColID]
+	// email := row[ColEmail]
+	// fmt.Printf("%v\n%v\n", id, email)
+}
+
+// Error codes
+func printErrorCodes() {
+const (
+	ErrInvalidInput = iota + 1000  // Offset from 1000
+	ErrTimeout
+	ErrNotFound
+	ErrPermission
+	)
+
+	fmt.Println("Error codes:")
+	fmt.Printf("%v\n%v\n%v\n%v\n", id, email, ErrTimeout, ErrNotFound, ErrPermission)
+}
+
 
 // Function to print weekdays
 func printWeekdays() {
@@ -57,8 +89,15 @@ func printFileSize(bytes float64) {
 }
 
 func main() {
+	
+	// Call the error codes function
+	printErrorCodes()
+	
 	// Call the weekdays function
 	printWeekdays()
+
+	// Call the database columns function
+	printDatabaseColumns()
 
 	// Call the file size functions
 	fileSize := 4000000000.0
