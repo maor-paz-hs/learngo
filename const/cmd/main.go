@@ -9,13 +9,12 @@ import (
 // Database columns
 // In database-related code, for accessing columns by index from SQL rows:
 func printDatabaseColumns() {
-const (
-	ColID = iota
-	ColName
-	ColEmail
-	ColCreatedAt
+	const (
+		ColID = iota
+		ColName
+		ColEmail
+		ColCreatedAt
 	)
-
 
 	fmt.Println("Database columns:")
 	fmt.Printf("%v\n%v\n%v\n%v\n", ColID, ColName, ColEmail, ColCreatedAt)
@@ -27,17 +26,16 @@ const (
 
 // Error codes
 func printErrorCodes() {
-const (
-	ErrInvalidInput = iota + 1000  // Offset from 1000
-	ErrTimeout
-	ErrNotFound
-	ErrPermission
+	const (
+		ErrInvalidInput = iota + 1000 // Offset from 1000
+		ErrTimeout
+		ErrNotFound
+		ErrPermission
 	)
 
 	fmt.Println("Error codes:")
 	fmt.Printf("%v\n%v\n%v\n%v\n", ErrInvalidInput, ErrTimeout, ErrNotFound, ErrPermission)
 }
-
 
 // Function to print weekdays
 func printWeekdays() {
@@ -58,7 +56,6 @@ func printWeekdays() {
 	fmt.Printf("%v\n%v\n%v\n%v\n%v\n%v\n%v\n", Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday)
 }
 
-
 // Function to convert bytes to GB (with parameters and return value)
 func bytesToGB(bytes float64) float64 {
 	const (
@@ -68,7 +65,7 @@ func bytesToGB(bytes float64) float64 {
 		GB                    // 1 << (10 * 3) = 1073741824
 		TB                    // 1 << (10 * 4) = 1099511627776
 		PB                    // 1 << (10 * 5) = 1125899906842624
-		EB                    // 1 << (10 * 6) = 1152921504606846976
+		EB                    // 1 << (10 * 6) =  1152921504606846976
 		ZB                    // 1 << (10 * 7) = 1180591620717411303424
 		YB                    // 1 << (10 * 8) = 1208925819614629174706176
 	)
@@ -80,19 +77,19 @@ func bytesToGB(bytes float64) float64 {
 func printFileSize(bytes float64) {
 	gb := bytesToGB(bytes)
 	fmt.Printf("File size: %.2fGB\n", gb)
-	{{/*
+	/*
 		The %.2f is a format specifier used with fmt.Printf to control how floating-point numbers are displayed:
 		%f - Tells Printf to format the value as a floating-point number (decimal notation)
 		.2 - Specifies the precision - exactly 2 decimal places after the decimal point
 		So %.2f means: "display as a float with exactly 2 decimal places"
-	*/}}
+	*/
 }
 
 func main() {
-	
+
 	// Call the error codes function
 	printErrorCodes()
-	
+
 	// Call the weekdays function
 	printWeekdays()
 
