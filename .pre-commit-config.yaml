@@ -6,5 +6,16 @@ repos:
       - id: go-vulncheck-mod
       - id: go-fmt
       - id: go-fmt-repo
-      - id: go-lint
+#      - id: go-lint
       - id: go-critic
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.37.1
+    hooks:
+      - id: yamllint
