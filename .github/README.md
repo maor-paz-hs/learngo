@@ -293,6 +293,74 @@ const (
 
 ### sizing with iota
 You can check it on the file with an example
-[example](const/cmd/main.go)
+[example](../const/cmd/main.go)
+
+</details>
+
+
+# Pointers 
+
+<details>
+<summary><b> Pointers in Go </b></summary>
+Pointers in Go are variables that store the memory address of another variable. <br>
+They are used to directly manipulate memory and can be useful for optimizing performance and managing resources.
+
+```go
+package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    // Declare an integer variable
+    var x int = 42
+
+    // Declare a pointer variable that points to the address of x
+    var p *int = &x
+
+    // Print the value of x and the address stored in p
+    fmt.Println("Value of x:", x)          // Output: Value of x: 42
+    fmt.Println("Address of x:", &x)       // Output: Address of x: 0xc0000140b0 (example)
+    fmt.Println("Value of p:", p)          // Output: Value of p: 0xc0000140b0 (same as address of x)
+    fmt.Println("Value at address p:", *p) // Output: Value at address p: 42
+
+    // Modify the value of x using the pointer
+    *p = 100
+
+    // Print the updated value of x
+    fmt.Println("Updated value of x:", x) // Output: Updated value of x: 100
+}
+```
+
+## Pointer Operators
+- `&` (Address-of operator): This operator is used to get the memory address of
+- `*` (Dereference operator): This operator is used to access or modify the value stored at the memory address pointed to by a pointer.
+
+## Nil Pointers
+A nil pointer is a pointer that does not point to any valid memory address. <br>
+It is represented by the `nil` keyword in Go. <br>
+Dereferencing a nil pointer will result in a runtime panic.
+
+```go
+var p *int = nil
+fmt.Println("Value of p:", p) // Output: Value of p: <nil>
+// Dereferencing a nil pointer will cause a panic
+// fmt.Println("Value at address p:", *p) // Uncommenting this line will cause a panic
+```
+
+## Pointers in Testing
+The t *testing.T parameter represents a testing context that provides methods to control test execution and report test failures.
+Key points:
+`t` is a pointer to the testing.T type from Go's standard testing package
+It provides methods like:
+`t.Errorf()` - reports a test failure with formatted output (used in your test)
+`t.Fatalf()` - reports a failure and stops the test immediately
+`t.Log()` / `t.Logf()` - logs information during test execution
+`t.Skip()` - skips the test
+`t.Parallel()` - marks the test to run in parallel
+Every test function in Go must have this exact signature: `func TestXxx(t *testing.T)` where Xxx starts with a capital letter. <br>
+The testing framework automatically passes this parameter when running your tests with go test.
+
 
 </details>

@@ -1,0 +1,10 @@
+default_stages: [pre-commit, pre-push]
+repos:
+  - repo: https://github.com/TekWizely/pre-commit-golang
+    rev: v1.0.0-rc.4
+    hooks:
+      - id: go-vulncheck-mod
+      - id: go-fmt
+      - id: go-fmt-repo
+      - id: go-lint
+      - id: go-critic
